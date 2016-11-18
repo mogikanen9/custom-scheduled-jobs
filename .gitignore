@@ -2,3 +2,10 @@
 simple-scheduling-task/.project
 *.prefs
 simple-scheduling-task/.settings/org.eclipse.wst.common.project.facet.core.xml
+*.jar
+xml-configured-tasks/.mvn/wrapper/maven-wrapper.jar
+xml-configured-tasks/.mvn/wrapper/maven-wrapper.properties
+xml-configured-tasks/mvnw
+*.cmd
+xml-configured-tasks/.mvn/wrapper/maven-wrapper.jar
+*.jar
