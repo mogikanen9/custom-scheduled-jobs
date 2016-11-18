@@ -1,0 +1,4 @@
+*.classpath
+simple-scheduling-task/.project
+*.prefs
+simple-scheduling-task/.settings/org.eclipse.wst.common.project.facet.core.xml
