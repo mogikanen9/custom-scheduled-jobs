@@ -9,3 +9,6 @@ xml-configured-tasks/mvnw
 *.cmd
 xml-configured-tasks/.mvn/wrapper/maven-wrapper.jar
 *.jar
+quartz-configured-tasks/.mvn/wrapper/maven-wrapper.properties
+
+quartz-configured-tasks/mvnw
