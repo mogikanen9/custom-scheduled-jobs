@@ -2,6 +2,7 @@ package com.mogikanensoftware.scheduling;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
@@ -37,12 +38,13 @@ public class QuartzConfiguration {
 		}
 		
 		@Bean
-		public SimpleTriggerFactoryBean sayHelloSimpleTriggerFactoryBean(){
-			SimpleTriggerFactoryBean stFactory = new SimpleTriggerFactoryBean();
+		public CronTriggerFactoryBean cronTriggerSayHelloFactoryBean(){
+			CronTriggerFactoryBean stFactory = new CronTriggerFactoryBean();
 			stFactory.setJobDetail(getSayHelloMethodInvokingJobDetailFactoryBean().getObject());
 			stFactory.setStartDelay(3000);
-			stFactory.setRepeatInterval(3000);
-			stFactory.setRepeatCount(10);
+			stFactory.setName("mytrigger");
+			stFactory.setGroup("mygroup");
+			stFactory.setCronExpression("0 0/1 * 1/1 * ? *");
 			return stFactory;
 		}
 		
@@ -50,7 +52,7 @@ public class QuartzConfiguration {
 		@Bean
 		public SchedulerFactoryBean schedulerFactoryBean() {
 			SchedulerFactoryBean scheduler = new SchedulerFactoryBean();
-			scheduler.setTriggers(myTimeSimpleTriggerFactoryBean().getObject(),sayHelloSimpleTriggerFactoryBean().getObject());
+			scheduler.setTriggers(myTimeSimpleTriggerFactoryBean().getObject(),cronTriggerSayHelloFactoryBean().getObject());
 			return scheduler;
 		}
 }
