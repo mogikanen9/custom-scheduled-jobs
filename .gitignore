@@ -12,3 +12,9 @@ xml-configured-tasks/.mvn/wrapper/maven-wrapper.jar
 quartz-configured-tasks/.mvn/wrapper/maven-wrapper.properties
 
 quartz-configured-tasks/mvnw
+sh.exe.stackdump
+*.jar
+quartz-cluster-boot/.mvn/wrapper/maven-wrapper.properties
+*.jar
+quartz-cluster-boot/.mvn/wrapper/maven-wrapper.jar
+xml-configured-tasks/.mvn/wrapper/maven-wrapper.jar
